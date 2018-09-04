@@ -15,6 +15,7 @@
         <module>eureka-server-demo1</module>
         <module>eureka-service-demo1</module>
         <module>eureka-ribbon-demo1</module>
+        <module>eureka-feign-demo1</module>
     </modules>
 
     <parent>

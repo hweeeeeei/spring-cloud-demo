@@ -3,19 +3,19 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>eureka-service-demo1</artifactId>
+    <artifactId>eureka-feign-demo1</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>eureka-service-demo1</name>
-    <description>eureka-service-demo1</description>
+    <name>eureka-feign-demo1</name>
+    <description>feign</description>
 
-    <!-- 继承父类的pom,引入springBoot等基础依赖 -->
     <parent>
         <groupId>com.hw</groupId>
         <artifactId>cloud-demo-1</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
+
 
     <dependencies>
         <dependency>
@@ -26,6 +26,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
     </dependencies>
+
 
 </project>

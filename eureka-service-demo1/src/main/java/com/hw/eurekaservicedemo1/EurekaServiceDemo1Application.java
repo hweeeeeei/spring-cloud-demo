@@ -3,7 +3,6 @@ package com.hw.eurekaservicedemo1;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -25,15 +24,13 @@ public class EurekaServiceDemo1Application {
         SpringApplication.run(EurekaServiceDemo1Application.class, args);
     }
 
-
     @Value("${server.port}")
     String port;
 
-
     @GetMapping("/home")
-    public String home (@RequestParam(value = "name") String name){
+    String home(@RequestParam(value = "name") String name) {
 
-        return "home  "+port+"  "+name;
+        return "home  " + port + "  " + name;
     }
 
 }
