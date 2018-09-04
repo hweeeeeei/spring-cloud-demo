@@ -11,6 +11,8 @@
     <name>cloud-demo-1</name>
     <description>cloud-demo-1</description>
 
+    <!--参考博客: https://blog.csdn.net/forezp/article/details/81041012   -->
+
     <modules>
         <module>eureka-server-demo1</module>
         <module>eureka-service-demo1</module>
