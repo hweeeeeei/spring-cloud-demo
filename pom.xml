@@ -18,12 +18,13 @@
         <module>eureka-service-demo1</module>
         <module>eureka-ribbon-demo1</module>
         <module>eureka-feign-demo1</module>
+        <module>hystrix-demo1</module>
     </modules>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.0.3.RELEASE</version>
+        <version>2.0.4.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
