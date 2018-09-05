@@ -11,13 +11,11 @@ public class HomeService {
     RestTemplate restTemplate;
 
 
-    // 请求代理
     public String homeService(String name) {
 
-        return restTemplate.getForObject("http://eureka-service-demo1/home?name="+name,String.class);
+        // restTemplate代理请求
+        return restTemplate.getForObject("http://eureka-service-demo1/home?name=" + name, String.class);
     }
-
-
 
 
 }

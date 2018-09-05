@@ -1,6 +1,6 @@
 server:
-  port: 8081
-# port: 8082
+  #    port: 8081
+  port: 8082
 #  port: 8083
 
 spring:
@@ -14,6 +14,9 @@ eureka:
       defaultZone: http://localhost:8761/eureka/
 
   instance:
+    #使用真实ip注册
+    prefer-ip-address: true
+
     # 每隔10s发送一次心跳
     lease-renewal-interval-in-seconds: 10
     # 告知服务端30秒还未收到心跳的话，就将该服务移除列表

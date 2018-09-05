@@ -8,8 +8,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  * FeignClient 指定需要调用服务的名称
+ *
+ * fallback 为断路器失败方法
  */
-@FeignClient(value = "eureka-service-demo1")
+@FeignClient(value = "eureka-service-demo1", fallback = HomeHystric.class)
 public interface HomeService {
 
     /**

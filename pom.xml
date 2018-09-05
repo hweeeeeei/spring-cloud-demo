@@ -18,7 +18,6 @@
         <module>eureka-service-demo1</module>
         <module>eureka-ribbon-demo1</module>
         <module>eureka-feign-demo1</module>
-        <module>hystrix-demo1</module>
     </modules>
 
     <parent>
@@ -55,6 +54,7 @@
                 <scope>import</scope>
             </dependency>
         </dependencies>
+
     </dependencyManagement>
 
     <build>
