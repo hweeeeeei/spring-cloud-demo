@@ -1,9 +1,9 @@
 server:
-  port: 8084
+  port: 8085
 
 spring:
   application:
-    name: ribbon
+    name: feign-demo1
 
 eureka:
   client:
@@ -14,9 +14,6 @@ eureka:
     registry-fetch-interval-seconds: 5
 
   instance:
-    #使用真实ip注册
-    prefer-ip-address: true
-
     # 每隔10s发送一次心跳
     lease-renewal-interval-in-seconds: 10
     # 告知服务端30秒还未收到心跳的话，就将该服务移除列表
