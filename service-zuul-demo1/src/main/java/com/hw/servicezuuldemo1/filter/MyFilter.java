@@ -11,9 +11,10 @@ import org.springframework.stereotype.Component;
  * 安全验证
  */
 @Component
-public class MyFilter extends ZuulFilter {
+public class MyFilter  {
+//public class MyFilter extends ZuulFilter {
 
-    private static Logger log =LoggerFactory.getLogger(MyFilter.class);
+/*    private static Logger log =LoggerFactory.getLogger(MyFilter.class);
 
     @Override
     public String filterType() {
@@ -33,5 +34,5 @@ public class MyFilter extends ZuulFilter {
     @Override
     public Object run() throws ZuulException {
         return null;
-    }
+    }*/
 }
