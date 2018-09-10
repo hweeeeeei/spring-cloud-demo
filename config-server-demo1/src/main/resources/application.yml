@@ -7,15 +7,14 @@ spring:
       server:
         git:
           # git仓库地址
-          uri:
+          uri: https://gitlab.com/hweeeeeei/cloud-demo-1.git
 
           # 仓库路径
-          search-paths:
-          username:
-          password:
+          searchPaths: SpringcloudConfig/respo
+          username: hwei1233@163.com
+          password: aiweige233..0
       # 分支
       label: master
 
 server:
   port: 8088
-
