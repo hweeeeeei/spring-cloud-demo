@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: config-server-demo1
+
+  cloud:
+    config:
+      server:
+        git:
+          # git仓库地址
+          uri:
+
+          # 仓库路径
+          search-paths:
+          username:
+          password:
+      # 分支
+      label: master
+
+server:
+  port: 8088
+

@@ -19,6 +19,10 @@
         <module>ribbon-demo1</module>
         <module>feign-demo1</module>
         <module>service-zuul-demo1</module>
+
+        <module>config-client-demo1</module>
+        <module>config-server-demo1</module>
+
     </modules>
 
     <parent>
