@@ -10,8 +10,10 @@ spring:
       #dev开发环境配置文件 test测试环境 pro正式环境
       profile: dev
       #指明配置服务中心url, 集群高可用 需去除此配置
-      # uri: http://localhost:8088/
-      name: config-server-demo1
+      #uri: http://localhost:8088/
+
+      # 需要拉取的配置文件名称
+      name: config-client
 
       discovery:
         # 从配置中心读取文件。

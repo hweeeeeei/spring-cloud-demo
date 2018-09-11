@@ -11,7 +11,7 @@
     <description>config-server-demo1</description>
 
 
-    <!-- 继承父类的pom,引入springBoot等基础依赖 -->
+    <!-- 继承父类的pom,引入sprin gBoot等基础依赖 -->
     <parent>
         <groupId>com.hw</groupId>
         <artifactId>cloud-demo-1</artifactId>
