@@ -14,12 +14,20 @@
     <!--参考博客: https://blog.csdn.net/forezp/article/details/70148833   -->
 
     <modules>
+        <!-- 服务注册中心 -->
         <module>eureka-server-demo1</module>
+
+        <!-- 服务提供者 -->
         <module>eureka-service-demo1</module>
+
+        <!-- 负载均衡器 -->
         <module>ribbon-demo1</module>
         <module>feign-demo1</module>
+
+        <!-- 路由网关 -->
         <module>service-zuul-demo1</module>
 
+        <!-- 配置中心 -->
         <module>config-client-demo1</module>
         <module>config-server-demo1</module>
 
