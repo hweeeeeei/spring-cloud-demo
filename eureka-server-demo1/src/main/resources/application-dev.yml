@@ -17,6 +17,12 @@ eureka:
       #注册认证需要密码
       defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}:${server.port}/eureka/
 
+#高可用注册中心，需要改变etc/hosts，linux系统通过vim /etc/hosts ,加上：
+#127.0.0.1 peer1
+#127.0.0.1 peer2
+#windows电脑，在c:/windows/systems/drivers/etc/hosts 修改。
+
+
 
   server:
     # 开启自我保护机制
