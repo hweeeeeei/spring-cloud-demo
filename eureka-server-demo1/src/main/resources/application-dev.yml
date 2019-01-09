@@ -1,0 +1,34 @@
+server:
+  port: 8761
+
+eureka:
+  instance:
+    hostname: localhost
+
+  client:
+    # 是否注册自己
+    register-with-eureka: false
+    # 是否检索服务
+    fetch-registry: false
+    serviceUrl:
+      #注册认证无密码
+      #defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
+      #注册认证需要密码
+      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}:${server.port}/eureka/
+
+
+  server:
+    # 开启自我保护机制
+    enable-self-preservation: true
+    # 每隔10s扫描服务列表，移除失效服务
+    eviction-interval-timer-in-ms: 10000
+
+
+# 设置安全验证密码
+# 注册中心密码
+spring:
+    security:
+      user:
+        name: hwei
+        password: hewei
