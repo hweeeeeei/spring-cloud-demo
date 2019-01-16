@@ -20,7 +20,7 @@
         <!-- 服务提供者 -->
         <module>eureka-service-demo1</module>
 
-        <!-- 负载均衡器 -->
+        <!-- 服务消费者 负载均衡器 -->
         <module>ribbon-demo1</module>
         <module>feign-demo1</module>
 
@@ -31,6 +31,8 @@
         <module>config-client-demo1</module>
         <module>config-server-demo1</module>
 
+        <module>service-auth</module>
+
     </modules>
 
     <parent>
@@ -40,6 +42,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
+    <!-- 配置参数 -->
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -57,6 +60,8 @@
 
     </dependencies>
 
+
+    <!-- 主工程pom-->
     <dependencyManagement>
         <dependencies>
             <dependency>
