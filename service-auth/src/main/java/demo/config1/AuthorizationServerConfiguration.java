@@ -1,4 +1,5 @@
-package demo.config;
+/*
+package demo.config1;
 
 
 import demo.utils.MyRedisTokenStore;
@@ -16,11 +17,13 @@ import org.springframework.security.oauth2.config.annotation.web.configurers.Aut
 
 //https://www.jianshu.com/p/3427549a148a
 
+*/
 /**
- * 认证授权服务器
- */
-@Configuration
-@EnableAuthorizationServer
+ * 认证授权服务器 redis
+ *//*
+
+//@Configuration
+//@EnableAuthorizationServer
 public class AuthorizationServerConfiguration extends AuthorizationServerConfigurerAdapter {
 
     @Autowired
@@ -30,15 +33,19 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
     RedisConnectionFactory redisConnectionFactory;
 
 
-    /**
+    */
+/**
      * 配置客户端详情服务（ClientDetailsService），
      * 客户端详情信息在这里进行初始化，
      * 你能够把客户端详情信息写死在这里或者是通过数据库来存储调取详情信息；
-     */
+     *//*
+
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
 
         String finalSecret = "{bcrypt}" + new BCryptPasswordEncoder().encode("123456");
+
+        //手动配置客户端数据 写死在代码里面 后续配置mysql保存
 
         // 配置两个客户端，一个用于password认证一个用于client认证
         clients.inMemory().withClient("client_1")
@@ -57,10 +64,12 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
     }
 
 
-    /**
+    */
+/**
      * endpoints)
      * 用来配置授权（authorization）以及令牌（token）的访问端点和令牌服务(token services)，
-     */
+     *//*
+
     @Override
     public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
 
@@ -72,8 +81,11 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
     }
 
 
-    // configure(AuthorizationServerSecurityConfigurer security)
-    // 用来配置令牌端点(Token Endpoint)的安全约束；
+    */
+/** configure(AuthorizationServerSecurityConfigurer security)
+        用来配置令牌端点(Token Endpoint)的安全约束；
+     *//*
+
     @Override
     public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
         // 允许表单认证
@@ -81,3 +93,4 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
     }
 
 }
+*/

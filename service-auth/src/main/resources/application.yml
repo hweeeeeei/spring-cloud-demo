@@ -11,6 +11,20 @@ spring:
     password: ReDis@.1*1PW1
     port: 6379
 
+  datasource:
+    url: jdbc:mysql://192.168.1.83:3306/heweiTest1?useUnicode=true&useSSL=false&characterEncoding=utf8
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  main:
+    allow-bean-definition-overriding: true
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
 eureka:
   client:
     serviceUrl:
