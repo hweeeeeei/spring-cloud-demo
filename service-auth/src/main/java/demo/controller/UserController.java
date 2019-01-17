@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.security.Principal;
 
-//    对外暴露获取token的API和验证token的API
+//对外暴露获取token的API和验证token的API
 @RestController
 @RequestMapping("/users")
 public class UserController {

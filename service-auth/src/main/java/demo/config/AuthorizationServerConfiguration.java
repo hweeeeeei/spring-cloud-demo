@@ -1,7 +1,7 @@
 package demo.config;
 
 
-import demo.MyRedisTokenStore;
+import demo.utils.MyRedisTokenStore;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
@@ -37,6 +37,7 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
      */
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
+
         String finalSecret = "{bcrypt}" + new BCryptPasswordEncoder().encode("123456");
 
         // 配置两个客户端，一个用于password认证一个用于client认证

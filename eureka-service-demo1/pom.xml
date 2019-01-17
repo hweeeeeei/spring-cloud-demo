@@ -20,7 +20,7 @@
     <dependencies>
 
         <!-- webSocket  -->
-        <!--参考https://blog.csdn.net/Ouyzc/article/details/79994401-->
+        <!--参考 https://blog.csdn.net/Ouyzc/article/details/79994401-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-websocket</artifactId>

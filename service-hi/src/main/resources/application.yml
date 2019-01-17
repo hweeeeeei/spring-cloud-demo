@@ -1,0 +1,39 @@
+server:
+  port: 9189
+
+spring:
+  application:
+    name: service-hi
+
+  redis:
+    host: 118.25.14.73
+    database: 0
+    password: ReDis@.1*1PW1
+    port: 6379
+
+eureka:
+  client:
+    serviceUrl:
+      # 向服务中心注册自己 (无密码注册)
+      #defaultZone: http://localhost:8761/eureka/
+
+      #使用密码注册
+      defaultZone: http://hwei:hewei@localhost:8761/eureka/
+
+      instance:
+        #使用真实ip注册
+        prefer-ip-address: true
+security:
+  oauth2:
+    resource:
+      #获取当前token的用户信息，验证token的API
+      user-info-uri: http://localhost:9089/users/current
+
+    #clientId、client-secret等信息要和service-auth中的配置对应。
+    client:
+      id: client_2
+      client-secret: 123456
+      access-token-uri: http://localhost:9089/oauth/token
+      grant-type: client_credentials,password
+      scope: server
+
