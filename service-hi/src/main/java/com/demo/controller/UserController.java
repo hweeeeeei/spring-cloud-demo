@@ -3,7 +3,9 @@ package com.demo.controller;
 import com.demo.dao.UserDao;
 import com.demo.dto.UserLoginParamDto;
 import com.demo.entity.User;
+import com.demo.service.UsersService;
 import com.demo.utils.BPwdEncoderUtil;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.security.oauth2.OAuth2ClientProperties;
 import org.springframework.context.annotation.Bean;
@@ -16,10 +18,7 @@ import org.springframework.security.oauth2.common.OAuth2AccessToken;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
 import javax.validation.Valid;
@@ -48,10 +47,19 @@ public class UserController {
     @Autowired
     private RestTemplate restTemplate;
 
-    @Bean
-    public RestTemplate restTemplate() {
-        return new RestTemplate();
+
+    @Autowired
+    UsersService userService;
+
+    @RequestMapping(value = "/registry", method = RequestMethod.POST)
+    public User createUser(@RequestParam("username") String username, @RequestParam("password") String password) {
+        if (StringUtils.isNotEmpty(username) && StringUtils.isNotEmpty(password)) {
+            return userService.create(username, password);
+        }
+
+        return null;
     }
+
 
     @RequestMapping("/login")
     public ResponseEntity<OAuth2AccessToken> login(@Valid UserLoginParamDto loginDto, BindingResult bindingResult) throws Exception {

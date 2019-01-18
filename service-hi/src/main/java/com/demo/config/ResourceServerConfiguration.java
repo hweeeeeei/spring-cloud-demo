@@ -25,34 +25,26 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
 
     /**
      * 请求匹配器，用来设置需要进行保护的资源路径，默认的情况下是受保护资源服务的全部路径。
-     *
      * authenticated 已认证的用户才能访问
      * permitAll 没认证也可以访问
+     *
      * @param http
      * @throws Exception
      */
     @Override
     public void configure(HttpSecurity http) throws Exception {
-/*        http.authorizeRequests()
-
-                // 配置order路径访问控制，必须认证后才可以访问
-                .antMatchers("/order/**").authenticated();*/
-
         http.csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/product/**","/registry/**", "/user/login/**").permitAll()
+                .antMatchers("/product/**", "/registry/**", "/user/login/**").permitAll()
                 .antMatchers("/**").authenticated();
 
     }
-
 
 
     @Override
     public void configure(ResourceServerSecurityConfigurer resources) throws Exception {
         resources.tokenStore(tokenStore);
     }
-
-
 
 
 }

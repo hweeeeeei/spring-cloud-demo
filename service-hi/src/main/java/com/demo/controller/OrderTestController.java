@@ -20,17 +20,6 @@ public class OrderTestController {
     Logger logger = LoggerFactory.getLogger(OrderTestController.class);
 
 
-    @Autowired
-    UsersService userService;
-
-    @RequestMapping(value = "/registry", method = RequestMethod.POST)
-    public User createUser(@RequestParam("username") String username, @RequestParam("password") String password) {
-        if (StringUtils.isNotEmpty(username) && StringUtils.isNotEmpty(password)) {
-            return userService.create(username, password);
-        }
-
-        return null;
-    }
 
 
     @GetMapping("/product/{id}")
@@ -44,9 +33,8 @@ public class OrderTestController {
     }
 
     /**
-     *
-     获取用户所有信息
-      */
+     * 获取用户所有信息
+     */
     @GetMapping("/getPrinciple")
     public OAuth2Authentication getPrinciple(OAuth2Authentication oAuth2Authentication, Principal principal, Authentication authentication) {
 
