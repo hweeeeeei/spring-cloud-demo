@@ -17,6 +17,7 @@ public class JdbcSecurityConfiguration extends WebSecurityConfigurerAdapter {
     // 密码管理
     @Bean
     PasswordEncoder passwordEncoder() {
+
         return PasswordEncoderFactories.createDelegatingPasswordEncoder();
     }
 
@@ -34,6 +35,7 @@ public class JdbcSecurityConfiguration extends WebSecurityConfigurerAdapter {
     // 认证服务器请求过滤url
     @Override
     protected void configure(HttpSecurity http) throws Exception {
+
         http.requestMatchers().anyRequest()
                 .and()
                 .authorizeRequests()

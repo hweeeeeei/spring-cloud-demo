@@ -22,6 +22,7 @@ public class OrderTestController {
 
     @Autowired
     UsersService userService;
+
     @RequestMapping(value = "/registry", method = RequestMethod.POST)
     public User createUser(@RequestParam("username") String username, @RequestParam("password") String password) {
         if (StringUtils.isNotEmpty(username) && StringUtils.isNotEmpty(password)) {
@@ -30,7 +31,6 @@ public class OrderTestController {
 
         return null;
     }
-
 
 
     @GetMapping("/product/{id}")
@@ -55,7 +55,6 @@ public class OrderTestController {
 
         return oAuth2Authentication;
     }
-
 
 
 }

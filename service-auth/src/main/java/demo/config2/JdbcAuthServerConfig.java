@@ -103,8 +103,8 @@ public class JdbcAuthServerConfig extends AuthorizationServerConfigurerAdapter {
 
     // 数据库管理token
     @Bean
-    public TokenStore tokenStore()
-    {
+    public TokenStore tokenStore() {
+
         return new JdbcTokenStore(dataSource);
     }
 

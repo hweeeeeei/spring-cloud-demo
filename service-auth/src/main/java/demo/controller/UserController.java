@@ -16,6 +16,7 @@ public class UserController {
 
     Logger logger = LoggerFactory.getLogger(UserController.class);
 
+    //当前用户信息
     @RequestMapping(value = "/current", method = RequestMethod.GET)
     public Principal getUser(Principal principal) {
 
