@@ -20,7 +20,7 @@ spring:
   main:
     allow-bean-definition-overriding: true
 
-#jpa整合
+  #jpa整合
   jpa:
     hibernate:
       ddl-auto: update

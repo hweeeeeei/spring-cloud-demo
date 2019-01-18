@@ -8,7 +8,9 @@ import java.io.Serializable;
 import java.util.Collection;
 import java.util.List;
 
-
+/**
+ * 映射user表
+ */
 @Entity
 public class User implements UserDetails, Serializable {
     @Id

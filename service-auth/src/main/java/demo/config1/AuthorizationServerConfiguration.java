@@ -9,11 +9,11 @@ import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer;
-import org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerConfigurerAdapter;
-import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
-import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
-import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
+import org.springframework.security.oauth2.config3.annotation.configurers.ClientDetailsServiceConfigurer;
+import org.springframework.security.oauth2.config3.annotation.web.configuration.AuthorizationServerConfigurerAdapter;
+import org.springframework.security.oauth2.config3.annotation.web.configuration.EnableAuthorizationServer;
+import org.springframework.security.oauth2.config3.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
+import org.springframework.security.oauth2.config3.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
 
 //https://www.jianshu.com/p/3427549a148a
 

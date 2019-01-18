@@ -43,7 +43,10 @@ public class OrderTestController {
         return "order id : " + id;
     }
 
-    // 获取用户所有信息
+    /**
+     *
+     获取用户所有信息
+      */
     @GetMapping("/getPrinciple")
     public OAuth2Authentication getPrinciple(OAuth2Authentication oAuth2Authentication, Principal principal, Authentication authentication) {
 

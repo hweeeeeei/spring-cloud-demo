@@ -4,7 +4,9 @@ package demo.entity;
 import org.springframework.security.core.GrantedAuthority;
 
 import javax.persistence.*;
-//jpa管控role
+/**
+ * jpa管控role
+ */
 @Entity
 public class Role implements GrantedAuthority {
 
