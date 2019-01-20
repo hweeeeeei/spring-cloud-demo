@@ -12,9 +12,13 @@ spring:
     port: 6379
 
   datasource:
-    url: jdbc:mysql://192.168.1.83:3306/heweiTest1?useUnicode=true&useSSL=false&characterEncoding=utf8
+    url: jdbc:mysql://118.25.14.73:3306/hweT1?useUnicode=true&useSSL=false&characterEncoding=utf8
     username: root
-    password: 123456
+    password: mysql.*2018/
+
+    #url: jdbc:mysql://192.168.1.83:3306/heweiTest1?useUnicode=true&useSSL=false&characterEncoding=utf8
+    #    username: root
+    #    password: 123456
     driver-class-name: com.mysql.cj.jdbc.Driver
 
   main:
@@ -38,3 +42,7 @@ eureka:
       instance:
         #使用真实ip注册
         prefer-ip-address: true
+
+logging:
+  level:
+    root: debug

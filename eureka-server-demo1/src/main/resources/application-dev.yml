@@ -30,7 +30,6 @@ eureka:
 #    # 每隔10s扫描服务列表，移除失效服务
 #    eviction-interval-timer-in-ms: 10000
 
-
 # 设置安全验证密码
 # 注册中心密码
 spring:
@@ -38,3 +37,6 @@ spring:
       user:
         name: hwei
         password: hewei
+logging:
+  level:
+    root: debug
