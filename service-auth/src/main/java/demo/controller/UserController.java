@@ -8,7 +8,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.security.Principal;
 
-//对外暴露获取token的API和验证token的API
+/**
+ * 对外暴露获取token的API和验证token的API
+ */
 @RestController
 @RequestMapping("/users")
 public class UserController {
@@ -16,7 +18,9 @@ public class UserController {
 
     Logger logger = LoggerFactory.getLogger(UserController.class);
 
-    //当前用户信息
+    /**
+     * 当前用户信息
+     */
     @RequestMapping(value = "/current", method = RequestMethod.GET)
     public Principal getUser(Principal principal) {
 
@@ -25,7 +29,6 @@ public class UserController {
 
         return principal;
     }
-
 
 
 }

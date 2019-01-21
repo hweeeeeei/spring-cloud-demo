@@ -2,6 +2,7 @@ package com.demo.dto;
 
 import com.demo.entity.JWT;
 import com.demo.entity.User;
+
 public class UserLoginDto {
     private JWT jwt;
     private User user;

@@ -6,11 +6,9 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 @SuppressWarnings("ALL")
 public class BPwdEncoderUtil {
     private static final BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-//    public static String BCryptPassword(String password) {
-//        return passwordEncoder.encode(password);
-//    }
 
-    public static boolean matches(CharSequence rawPassword, String encodedPassword){
+
+    public static boolean matches(CharSequence rawPassword, String encodedPassword) {
         return passwordEncoder.matches(rawPassword, encodedPassword);
     }
 }

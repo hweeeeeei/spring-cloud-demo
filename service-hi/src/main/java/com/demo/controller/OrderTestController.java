@@ -20,8 +20,6 @@ public class OrderTestController {
     Logger logger = LoggerFactory.getLogger(OrderTestController.class);
 
 
-
-
     @GetMapping("/product/{id}")
     public String getProduct(@PathVariable String id) {
         return "product id : " + id;
@@ -30,21 +28,6 @@ public class OrderTestController {
     @GetMapping("/order/{id}")
     public String getOrder(@PathVariable String id) {
         return "order id : " + id;
-    }
-
-    /**
-     * 获取用户所有信息
-     */
-    @GetMapping("/getPrinciple")
-    public OAuth2Authentication getPrinciple(OAuth2Authentication oAuth2Authentication, Principal principal, Authentication authentication) {
-
-        logger.info(oAuth2Authentication.getUserAuthentication().getAuthorities().toString());
-        logger.info(oAuth2Authentication.toString());
-        logger.info("principal.toString() " + principal.toString());
-        logger.info("principal.getName() " + principal.getName());
-        logger.info("authentication: " + authentication.getAuthorities().toString());
-
-        return oAuth2Authentication;
     }
 
 

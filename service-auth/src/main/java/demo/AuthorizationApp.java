@@ -7,8 +7,11 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
 
 
 /***
- * 认证服务器
+ * spring cloud oauth2.0认证服务器
  * 认证服务器本身也是资源服务
+ * <p>
+ * 官方文档:http://projects.spring.io/spring-security-oauth/docs/oauth2.html
+ * 官方数据库表:https://github.com/spring-projects/spring-security-oauth/blob/master/spring-security-oauth2/src/test/resources/schema.sql
  */
 @SpringBootApplication
 @EnableEurekaClient

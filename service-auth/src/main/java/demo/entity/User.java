@@ -23,6 +23,20 @@ public class User implements UserDetails, Serializable {
     @Column
     private String password;
 
+
+    /**
+     * 性别
+     */
+    @Column
+    private String sex;
+
+    /**
+     * 手机
+     */
+    @Column
+    private String mobile;
+
+
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"))
     private List<Role> authorities;
@@ -83,5 +97,19 @@ public class User implements UserDetails, Serializable {
         return true;
     }
 
+    public String getSex() {
+        return sex;
+    }
 
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
+    public String getMobile() {
+        return mobile;
+    }
+
+    public void setMobile(String mobile) {
+        this.mobile = mobile;
+    }
 }

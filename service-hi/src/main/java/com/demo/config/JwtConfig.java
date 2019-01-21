@@ -22,7 +22,9 @@ import java.io.IOException;
 @Configuration
 public class JwtConfig {
 
-    //公钥
+    /**
+     * 公钥
+     */
     public static final String public_cert = "public.cert";
 
     /**
@@ -33,6 +35,7 @@ public class JwtConfig {
 
     /**
      * 注入token管理器
+     *
      * @return
      */
     @Bean
@@ -44,17 +47,18 @@ public class JwtConfig {
 
     /**
      * 使用公钥对token加密解密
+     *
      * @return
      */
     @Bean
     protected JwtAccessTokenConverter jwtAccessTokenConverter() {
         JwtAccessTokenConverter converter = new JwtAccessTokenConverter();
-        Resource resource =  new ClassPathResource(public_cert);
+        Resource resource = new ClassPathResource(public_cert);
 
         String publicKey;
         try {
             publicKey = new String(FileCopyUtils.copyToByteArray(resource.getInputStream()));
-        }catch (IOException e) {
+        } catch (IOException e) {
             throw new RuntimeException(e);
         }
 

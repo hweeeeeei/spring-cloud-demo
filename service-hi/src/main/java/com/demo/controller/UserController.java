@@ -6,6 +6,8 @@ import com.demo.entity.User;
 import com.demo.service.UsersService;
 import com.demo.utils.BPwdEncoderUtil;
 import org.apache.commons.lang.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.security.oauth2.OAuth2ClientProperties;
 import org.springframework.context.annotation.Bean;
@@ -13,8 +15,10 @@ import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.oauth2.client.resource.OAuth2ProtectedResourceDetails;
 import org.springframework.security.oauth2.common.OAuth2AccessToken;
+import org.springframework.security.oauth2.provider.OAuth2Authentication;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.validation.BindingResult;
@@ -22,10 +26,12 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
 import javax.validation.Valid;
+import java.security.Principal;
 import java.util.ArrayList;
 import java.util.Base64;
 import java.util.Collections;
 import java.util.List;
+
 /**
  * @Description: <br>
  * @CreateDate: Created in 2019/1/18 16:17 <br>
@@ -35,6 +41,9 @@ import java.util.List;
 @RequestMapping("/user")
 @RestController
 public class UserController {
+
+    Logger logger = LoggerFactory.getLogger(UserController.class);
+
     @Autowired
     private UserDao userRepository;
 
@@ -96,5 +105,21 @@ public class UserController {
         //获取 Token
         return restTemplate.exchange(oAuth2ProtectedResourceDetails.getAccessTokenUri(), HttpMethod.POST, httpEntity, OAuth2AccessToken.class);
 
+    }
+
+
+    /**
+     * 获取用户所有信息
+     */
+    @GetMapping("/getPrinciple")
+    public OAuth2Authentication getPrinciple(OAuth2Authentication oAuth2Authentication, Principal principal, Authentication authentication) {
+
+        logger.info(oAuth2Authentication.getUserAuthentication().getAuthorities().toString());
+        logger.info(oAuth2Authentication.toString());
+        logger.info("principal.toString() " + principal.toString());
+        logger.info("principal.getName() " + principal.getName());
+        logger.info("authentication: " + authentication.getAuthorities().toString());
+
+        return oAuth2Authentication;
     }
 }

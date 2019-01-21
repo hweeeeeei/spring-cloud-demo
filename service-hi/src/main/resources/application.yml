@@ -47,6 +47,7 @@ security:
         #提供公有密匙的端点
         key-uri: http://localhost:9089/oauth/token_key
 
+
     #clientId、client-secret等信息要和service-auth中的配置对应。
     # 如果运行报错, 需要在数据库表中添加此client信息
     client:
